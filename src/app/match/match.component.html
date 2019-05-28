@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h2>Matches</h2>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let match of matches"> 
+          <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ match.name }}</h4>
+              <p class="list-group-item-text">{{ match.venue }}</p>
+              <p class="list-group-item-text">{{ match.date }}</p>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>

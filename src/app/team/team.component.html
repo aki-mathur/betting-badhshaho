@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h2>Teams</h2>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let team of teams"> 
+          <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ team.name }}</h4>
+              <p class="list-group-item-text">{{ team.captain }}</p>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>
