@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TeamComponent } from './team/team.component';
 import { from } from 'rxjs';
 import { MatchComponent } from './match/match.component';
+import { AngularTokenModule } from 'angular-token'
 
 @NgModule({
   declarations: [
@@ -21,9 +22,12 @@ import { MatchComponent } from './match/match.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularTokenModule.forRoot({
+
+    })
   ],
-  providers: [],
+  providers: [ AngularTokenModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
