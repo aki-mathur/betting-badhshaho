@@ -6,11 +6,22 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let match of matches"> 
+        <a class="list-group-item clearfix" *ngFor="let match of matches"> 
           <div class="pull-left">
               <h4 class="list-group-item-heading">{{ match.name }}</h4>
               <p class="list-group-item-text">{{ match.venue }}</p>
-              <p class="list-group-item-text">{{ match.date }}</p>
+              <p class="list-group-item-text">{{ match.date | date : "dd/MM/yyyy hh:mm:ss.SSS"}}</p>
+              
+          </div>
+          <div class="pull-right form-group form-inline" *ngIf="match.winner_team_name==null"> 
+              <select class="form-control"  [(ngModel)]="match.winner_team_id">
+                  <option *ngFor="let team of match.teams" [ngValue]="team.id">{{ team.name}}</option>
+                </select>
+                &nbsp;&nbsp;
+            <button class="btn btn-primary form-control" (click)="setWinner(match,$index)">Save</button>
+          </div>
+          <div class="pull-right form-group form-inline" *ngIf="match.winner_team_name!=null"> 
+          <p>{{match.winner_team_name+" "+"Won" }}</p>
           </div>
         </a>
     </div>

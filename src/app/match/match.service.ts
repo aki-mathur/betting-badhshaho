@@ -13,4 +13,8 @@ export class MatchService {
   getMatches(){
     return this.http.get<Match>('http://betting-badshaho-api.herokuapp.com/matches');
   }
+
+ setWinner(match:Match){
+  return this.http.patch<Match>('http://betting-badshaho-api.herokuapp.com/matches/'+match.id,match);
+ }
 }

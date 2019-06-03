@@ -18,4 +18,11 @@ export class MatchComponent implements OnInit {
     })
   }
 
+  setWinner(match: Match,index: number){
+    console.log(index)
+    // this.matchService.setWinner(match).subscribe(data => {
+    //   this.matches[index] = data;
+    // })
+  }
+
 }
